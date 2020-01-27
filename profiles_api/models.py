@@ -31,9 +31,9 @@ class TvLink(models.Model):
 
 class AdsService(models.Model):
     """Database model for Ads Service"""
-    selectedAddService = models.CharField(max_length=20, default="google")
-    status = models.CharField(max_length=10, default="yes")
-    cnt = models.IntegerField()
+    selectedAddService = models.CharField(max_length=20,null=True, blank=True)
+    status = models.CharField(max_length=10, null=True, blank=True)
+    cnt = models.IntegerField(null=True, blank=True)
 
     def __str__(self):
         """To String Method"""
