@@ -29,6 +29,7 @@ class TvLink(models.Model):
         return tv_list
 
 
+
 class AdsService(models.Model):
     """Database model for Ads Service"""
     selectedAddService = models.CharField(max_length=20, blank=True)
@@ -38,3 +39,21 @@ class AdsService(models.Model):
     def __str__(self):
         """To String Method"""
         return "ADS SERVICE"
+
+
+
+"""Schedule Database Model"""
+class MatchSchedule(models.Model):
+    """Match Schedule"""
+    team1name = models.CharField(max_length=100,blank=False, null=False)
+    team2name = models.CharField(max_length=100,blank=False, null=False)
+    team1logo = models.ImageField(upload_to='images/', max_length=900,blank=False, null=False)
+    team2logo = models.ImageField(upload_to='images/', max_length=900,blank=False, null=False)
+    matchdate = models.DateField(blank=False,null=False)
+    matchtime = models.TimeField(blank=False,null=False)
+    matchvenue = models.CharField(max_length=255,blank=False,null=False)
+
+    def __str__(self):
+        """To String Method"""
+        return self.team1name + "vs" + self.team2name
+

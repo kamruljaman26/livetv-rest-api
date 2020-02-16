@@ -26,3 +26,20 @@ class AdsServiceSerializer(serializers.ModelSerializer):
             'status',
             'cnt'
         )
+
+
+class MatchScheduleSerializer(serializers.ModelSerializer):
+    """Data Serializer for Match Schedule"""
+
+    class Meta:
+        model = models.MatchSchedule
+        fields = (
+            'id',
+            "team1name",
+            "team2name",
+            "team1logo",
+            "team2logo",
+            "matchdate",
+            "matchtime",
+            "matchvenue"
+        )

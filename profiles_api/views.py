@@ -24,3 +24,16 @@ class AdserviceViewSet(viewsets.ModelViewSet):
     def list(self, request):
         serializer = serializers.AdsServiceSerializer(self.queryset, many=True)
         return Response(serializer.data)
+
+
+class MatchSchedule(viewsets.ModelViewSet):
+    """Handle createing, reading and updating Match Schedule"""
+    serializer_class = serializers.MatchScheduleSerializer
+    queryset = models.MatchSchedule.objects.all()
+
+    #http_method_names allows only defined http method
+    http_method_names = ['get','post','put']
+
+    def list(self, request):
+        serializer = serializers.MatchScheduleSerializer(self.queryset,many=True)
+        return Response(serializer.data)
