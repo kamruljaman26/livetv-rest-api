@@ -47,8 +47,8 @@ class MatchSchedule(models.Model):
     """Match Schedule"""
     team1name = models.CharField(max_length=100,blank=False, null=False)
     team2name = models.CharField(max_length=100,blank=False, null=False)
-    team1logo = models.ImageField(upload_to='images/', max_length=900,blank=False, null=False)
-    team2logo = models.ImageField(upload_to='images/', max_length=900,blank=False, null=False)
+    team1logo = models.FileField(blank=False, null=False)
+    team2logo = models.FileField(blank=False, null=False)
     matchdate = models.DateField(blank=False,null=False)
     matchtime = models.TimeField(blank=False,null=False)
     matchvenue = models.CharField(max_length=255,blank=False,null=False)
