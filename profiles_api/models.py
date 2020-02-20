@@ -55,5 +55,16 @@ class MatchSchedule(models.Model):
 
     def __str__(self):
         """To String Method"""
-        return self.team1name + "vs" + self.team2name
+        return self.team1name + " vs " + self.team2name
 
+"""News Database Model"""
+class MatchNews(models.Model):
+    """News Models"""
+    title = models.CharField(max_length=100,blank=False, null=False)
+    url = models.URLField(max_length=250,blank=False,null=False)
+    sourcename = models.CharField(max_length=100,blank=False, null=False)
+    image = models.FileField(blank=False, null=False)
+
+    def __str__(self):
+        """To Sting Method"""
+        return  self.title

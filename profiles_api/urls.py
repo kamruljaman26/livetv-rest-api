@@ -11,6 +11,7 @@ router = DefaultRouter()
 router.register('tvlink',views.LiveTvViewSet)
 router.register('adservice',views.AdserviceViewSet)
 router.register('matchschedule',views.MatchSchedule)
+router.register('news',views.MatchNews)
 
 urlpatterns = [
     path('', include(router.urls)),

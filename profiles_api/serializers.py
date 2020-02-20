@@ -43,3 +43,16 @@ class MatchScheduleSerializer(serializers.ModelSerializer):
             "matchtime",
             "matchvenue"
         )
+
+class NewsSerializer(serializers.ModelSerializer):
+    """News Serializer"""
+
+    class Meta:
+        model = models.MatchNews
+        fields = (
+            'id',
+            'title',
+            'url',
+            'sourcename',
+            'image',
+        )

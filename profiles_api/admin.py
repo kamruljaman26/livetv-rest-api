@@ -5,3 +5,4 @@ from profiles_api import models
 admin.site.register(models.TvLink)
 admin.site.register(models.AdsService)
 admin.site.register(models.MatchSchedule)
+admin.site.register(models.MatchNews)

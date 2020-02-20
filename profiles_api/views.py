@@ -36,14 +36,26 @@ class MatchSchedule(viewsets.ModelViewSet):
     #http_method_names allows only defined http method
     http_method_names = ['get','post','put']
 
-    # def list(self, request):
-    #     serializer = serializers.MatchScheduleSerializer(self.queryset,many=True)
-    #     return Response(serializer.data)
-
-
     def post(self, request, *args, **kwargs):
 
       file_serializer = serializers.MatchScheduleSerializer(data=request.data)
+      if file_serializer.is_valid():
+          file_serializer.save()
+          return Response(file_serializer.data, status=status.HTTP_201_CREATED)
+      else:
+          return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class MatchNews(viewsets.ModelViewSet):
+    """Handle createing, reading and updating Match Schedule"""
+    serializer_class = serializers.NewsSerializer
+    queryset = models.MatchNews.objects.all()
+
+    #http_method_names allows only defined http method
+    http_method_names = ['get','post','put']
+
+    def post(self, request, *args, **kwargs):
+      file_serializer = serializers.NewsSerializer(data=request.data)
       if file_serializer.is_valid():
           file_serializer.save()
           return Response(file_serializer.data, status=status.HTTP_201_CREATED)
