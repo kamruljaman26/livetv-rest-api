@@ -9,8 +9,10 @@ from profiles_project import settings
 
 router = DefaultRouter()
 router.register('tvlink',views.LiveTvViewSet)
+router.register('psltvlink',views.PslLiveTvViewSet)
 router.register('adservice',views.AdserviceViewSet)
 router.register('matchschedule',views.MatchSchedule)
+router.register('iplmatchschedule',views.IplMatchSchedule)
 router.register('news',views.MatchNews)
 
 urlpatterns = [
