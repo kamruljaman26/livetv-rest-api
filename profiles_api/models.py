@@ -117,7 +117,11 @@ class MatchNews(models.Model):
 """NEW VERSION"""
 class VERSION(models.Model):
     """New Version"""
-    VERSION = models.IntegerField(blank=False, null=False)
+    version = models.IntegerField(blank=False, null=False)
+
+    def __str__(self):
+        """To Sting Method"""
+        return  "VERSION"
 
 
 

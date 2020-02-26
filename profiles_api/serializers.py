@@ -73,7 +73,6 @@ class IplMatchScheduleSerializer(serializers.ModelSerializer):
 
 class NewsSerializer(serializers.ModelSerializer):
     """News Serializer"""
-
     class Meta:
         model = models.MatchNews
         fields = (
@@ -86,9 +85,9 @@ class NewsSerializer(serializers.ModelSerializer):
 
 class VersionSerializer(serializers.ModelSerializer):
     """News Serializer"""
-
     class Meta:
         model = models.VERSION
         fields = (
-            'VERSION'
+            'id',
+            'version',
         )
