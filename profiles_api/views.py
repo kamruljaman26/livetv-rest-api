@@ -78,11 +78,15 @@ class MatchNews(viewsets.ModelViewSet):
       file_serializer = serializers.NewsSerializer(data=request.data)
       if file_serializer.is_valid():
 
-
-          devices = FCMDevice.objects.all()
-          devices.send_message(title="Title", body="Message")
-
           file_serializer.save()
           return Response(file_serializer.data, status=status.HTTP_201_CREATED)
       else:
           return Response(file_serializer.errors, status=status.HTTP_400_BAD_REQUEST)
+
+
+class VERSIONViewSet(viewsets.ModelViewSet):
+    """Handle createing, reading and updating LiveTv API Data"""
+    serializer_class = serializers.VersionSerializer
+    queryset = models.VERSION.objects.all()
+    #http_method_names allows only defined http method
+    http_method_names = ['get']

@@ -83,3 +83,12 @@ class NewsSerializer(serializers.ModelSerializer):
             'sourcename',
             'image',
         )
+
+class VersionSerializer(serializers.ModelSerializer):
+    """News Serializer"""
+
+    class Meta:
+        model = models.VERSION
+        fields = (
+            'VERSION'
+        )

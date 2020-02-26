@@ -114,5 +114,10 @@ class MatchNews(models.Model):
         """To Sting Method"""
         return  self.title
 
+"""NEW VERSION"""
+class VERSION(models.Model):
+    """New Version"""
+    VERSION = models.IntegerField(blank=False, null=False)
+
 
 
