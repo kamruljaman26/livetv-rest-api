@@ -45,7 +45,7 @@ class MatchScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.MatchSchedule
         fields = (
-            'id',
+            'id',"match_status",
             "team1name",
             "team2name",
             "team1logo",
@@ -61,7 +61,7 @@ class IplMatchScheduleSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.IplMatchSchedule
         fields = (
-            'id',
+            'id',"match_status",
             "team1name",
             "team2name",
             "team1logo",

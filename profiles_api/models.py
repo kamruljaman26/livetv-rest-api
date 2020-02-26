@@ -73,6 +73,7 @@ class AdsService(models.Model):
 """PSL Match Schedule"""
 class MatchSchedule(models.Model):
     """Match Schedule"""
+    match_status = models.CharField(max_length=100,blank=True,null=False)
     team1name = models.CharField(max_length=100,blank=False, null=False)
     team2name = models.CharField(max_length=100,blank=False, null=False)
     team1logo = models.FileField(blank=False, null=False)
@@ -88,6 +89,7 @@ class MatchSchedule(models.Model):
 """PSL Match Schedule"""
 class IplMatchSchedule(models.Model):
     """Match Schedule"""
+    match_status = models.CharField(max_length=100,blank=True,null=False)
     team1name = models.CharField(max_length=100,blank=False, null=False)
     team2name = models.CharField(max_length=100,blank=False, null=False)
     team1logo = models.FileField(blank=False, null=False)

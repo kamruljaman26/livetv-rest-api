@@ -14,7 +14,7 @@ class LiveTvViewSet(viewsets.ModelViewSet):
 class PslLiveTvViewSet(viewsets.ModelViewSet):
     """Handle createing, reading and updating PSL LiveTv API Data"""
     serializer_class = serializers.PslTvLinkSerializer
-    queryset = models.TvLink.objects.all()
+    queryset = models.PslTvLink.objects.all()
     #http_method_names allows only defined http method
     http_method_names = ['get']
 
