@@ -44,7 +44,21 @@ INSTALLED_APPS = [
     'rest_framework.authtoken',
     'profiles_api',
     #FIREBASE FCM Notification
+    "fcm_django"
 ]
+# Firebase Notification
+FCM_DJANGO_SETTINGS = {
+        "APP_VERBOSE_NAME": "[FCM Django]",
+         # default: _('FCM Django')
+        "FCM_SERVER_KEY": "[AAAAE0cvz6w:APA91bFT9gywVlrvWVjk5lRwi0Aeul8YmVctWIoKrmuVeDl8CwYi4OLnVNWhBl1Qw3QTOKFmVG_CxKnnGWnI9cA7g-vT_r7xzyOIu7JAuqzazYGlHHX77wfIHBsFPsahCdNiLJuUujrb]",
+         # true if you want to have only one active device per registered user at a time
+         # default: False
+        "ONE_DEVICE_PER_USER": True,
+         # devices to which notifications cannot be sent,
+         # are deleted upon receiving error response from FCM
+         # default: False
+        "DELETE_INACTIVE_DEVICES": True,
+}
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
