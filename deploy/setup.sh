@@ -6,7 +6,7 @@ set -e
 PROJECT_GIT_URL='https://github.com/kamruljaman26/livetv-rest-api.git'
 
 PROJECT_BASE_PATH='/usr/local/apps/livetv-rest-api'
-
+/usr/local/apps/livetv-rest-api/env/bin/pip install django-resized
 echo "Installing dependencies..."
 apt-get update
 apt-get install -y python3-dev python3-venv sqlite python-pip supervisor nginx git
