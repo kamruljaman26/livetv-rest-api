@@ -98,7 +98,7 @@ class PlayerSeriaziler(serializers.ModelSerializer):
     """Player Seriaziler"""
     class Meta:
         model = models.Player
-        fields = ['id','player_name','player_image']
+        fields = ['player_name']
 
 
 class TeamSerializer(serializers.ModelSerializer):

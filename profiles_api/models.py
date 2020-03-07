@@ -145,8 +145,6 @@ class Player(models.Model):
     #Model
     team = models.ForeignKey(Team, related_name='player', on_delete=models.CASCADE)
     player_name = models.CharField(max_length=45,blank=False,null=False)
-    player_image = ResizedImageField(size=[120, 120],quality=75,upload_to='image',
-                                     crop=['middle', 'center'],blank=False,null=False)
 
     #Meta Class
     class Meta:

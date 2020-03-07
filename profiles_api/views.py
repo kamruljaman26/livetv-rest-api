@@ -104,4 +104,4 @@ class TeamViewSet(viewsets.ModelViewSet):
     serializer_class = serializers.TeamSerializer
     queryset = models.Team.objects.all()
     #http_method_names allows only defined http method
-    http_method_names = ['get','post','put']
+    http_method_names = ['get']
