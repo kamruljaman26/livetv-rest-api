@@ -91,3 +91,20 @@ class VersionSerializer(serializers.ModelSerializer):
             'id',
             'version',
         )
+
+
+
+class PlayerSeriaziler(serializers.ModelSerializer):
+    """Player Seriaziler"""
+    class Meta:
+        model = models.Player
+        fields = ['id','player_name','player_image']
+
+
+class TeamSerializer(serializers.ModelSerializer):
+    """Team Serializer"""
+    player = PlayerSeriaziler(many=True, read_only=True)
+
+    class Meta:
+        model = models.Team
+        fields = ['id', 'team_name', 'team_image','player']

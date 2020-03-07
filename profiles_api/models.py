@@ -1,4 +1,6 @@
 from django.db import models
+from django_resized import ResizedImageField
+
 
 # Genarel Live TV
 class TvLink(models.Model):
@@ -123,5 +125,35 @@ class VERSION(models.Model):
         """To Sting Method"""
         return  "VERSION"
 
+
+"""Team & Player"""
+class Team(models.Model):
+    """IPL Team"""
+
+    #Model
+    team_name = models.CharField(max_length=45,blank=False,null=False)
+    team_image = ResizedImageField(size=[120, 120],quality=75,upload_to='image',
+                                     crop=['middle', 'center'],blank=False,null=False)
+
+    def __str__(self):
+        """To Sting Method"""
+        return  self.team_name
+
+class Player(models.Model):
+    """IPL Player"""
+
+    #Model
+    team = models.ForeignKey(Team, related_name='player', on_delete=models.CASCADE)
+    player_name = models.CharField(max_length=45,blank=False,null=False)
+    player_image = ResizedImageField(size=[120, 120],quality=75,upload_to='image',
+                                     crop=['middle', 'center'],blank=False,null=False)
+
+    #Meta Class
+    class Meta:
+        ordering = ['player_name']
+
+    # To String
+    def __str__(self):
+        return self.player_name
 
 

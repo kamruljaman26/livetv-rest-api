@@ -9,3 +9,5 @@ admin.site.register(models.MatchSchedule) # PSL SCHEDULE
 admin.site.register(models.IplMatchSchedule) #IPL SCHEDULE
 admin.site.register(models.MatchNews) # ALL SPORTS NEWS
 admin.site.register(models.VERSION) # ALL VERSION NEWS
+admin.site.register(models.Team) # ALL VERSION NEWS
+admin.site.register(models.Player) # ALL VERSION NEWS

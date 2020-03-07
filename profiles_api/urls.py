@@ -15,6 +15,7 @@ router.register('iplmatchschedule',views.IplMatchSchedule)
 router.register('news',views.MatchNews)
 router.register(r'devices', FCMDeviceAuthorizedViewSet)
 router.register('version', views.VERSIONViewSet)
+router.register('team', views.TeamViewSet)
 
 
 urlpatterns = [

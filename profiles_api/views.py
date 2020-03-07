@@ -90,3 +90,18 @@ class VERSIONViewSet(viewsets.ModelViewSet):
     queryset = models.VERSION.objects.all()
     #http_method_names allows only defined http method
     http_method_names = ['get']
+
+
+class VERSIONViewSet(viewsets.ModelViewSet):
+    """Handle createing, reading and updating LiveTv API Data"""
+    serializer_class = serializers.VersionSerializer
+    queryset = models.VERSION.objects.all()
+    #http_method_names allows only defined http method
+    http_method_names = ['get']
+
+class TeamViewSet(viewsets.ModelViewSet):
+    """Handle createing, reading and updating LiveTv API Data"""
+    serializer_class = serializers.TeamSerializer
+    queryset = models.Team.objects.all()
+    #http_method_names allows only defined http method
+    http_method_names = ['get','post','put']
