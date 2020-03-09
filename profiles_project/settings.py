@@ -27,7 +27,7 @@ SECRET_KEY = 'x3mpcz_-o%xon&(wd2f^2q+sk%)3cy1^$8f(b6pp5tab0w-acz'
 DEBUG = True
 
 # Set Server Host Link
-ALLOWED_HOSTS = ['ec2-18-225-31-254.us-east-2.compute.amazonaws.com']
+ALLOWED_HOSTS = ['ec2-18-219-231-122.us-east-2.compute.amazonaws.com']
 #ALLOWED_HOSTS = []
 
 # django-Image Resized
